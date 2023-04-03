@@ -20,7 +20,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const login = () => {
-    fetch(`http://localhost:3004/login`, {
+    fetch(`https://mushy-blue-crow.cyclic.app/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

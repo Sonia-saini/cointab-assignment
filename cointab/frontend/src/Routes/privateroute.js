@@ -5,7 +5,7 @@ function Privateroute({ children }) {
   let user = JSON.parse(localStorage.getItem("loginuser")) || {};
 
   if (!user.token) {
-    // alert("you can't access home page please login first");
+    alert("you can't access home page please login first");
     return <Navigate to="/login" />;
   }
   return children;

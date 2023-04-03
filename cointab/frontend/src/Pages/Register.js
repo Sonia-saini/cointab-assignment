@@ -20,15 +20,15 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const register = () => {
-    fetch(`http://localhost:3004/register`, {
+    fetch(`https://mushy-blue-crow.cyclic.app/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ name: name, email: email, password: password }),
     })
-      .then((res) => (res.json(), res.status == 200 && navigate("/login")))
-      .then((res) => (console.log(res), alert(res)))
+      .then((res) => (res.json()))
+      .then((res) => (console.log(res), alert(res.msg),navigate("/login")))
       .catch((err) => alert(err));
   };
   return (
